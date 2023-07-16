@@ -3,6 +3,7 @@ import Link from "next/link"
 interface ButtonMenuProps{
     text : string
     page?: string
+    
 }
 
 export default function ButtonMenu(props: ButtonMenuProps){

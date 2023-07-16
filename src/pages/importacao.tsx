@@ -8,7 +8,7 @@ export default function Importacao(){
             <title>CRM-FACIL</title>
         </header>
         <TagUsuarioLogado iniciais='WB' usuario='WILLIAN BORGES' empresa='GERBOR SOLUÇÕES'/>
-        <section id='#menu'> <Navbar TypeMenu='Importação'/></section>
+        <section id='#menu'> <Navbar TypeMenu='Configurações'/></section>
         </div>
         <div className={`bg-gradient-to-t from-white to-slate-400 p-2
             text-slate-800 h-screen
