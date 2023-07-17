@@ -25,15 +25,15 @@ export default function Navbar(props: NavBarProps){
             {props.TypeMenu === 'Empresas' ? (
                 <Itemsnavbar Empresas texto={props.TypeMenu} />
             ) : ''}
-            {props.TypeMenu === 'Configurações' ? (
-                <Itemsnavbar Configurações texto={props.TypeMenu} />
-            ) : ''}
             {props.TypeMenu === 'Relatórios' ? (
                 <Itemsnavbar Relatórios texto={props.TypeMenu} />
-            ) : ''}
+                ) : ''}
             {props.TypeMenu === 'Importações' ? (
                 <Itemsnavbar Importações texto={props.TypeMenu} />
-            ) : ''}
+                ) : ''}
+            {props.TypeMenu === 'Configurações' ? (
+                    <Itemsnavbar Configurações texto={props.TypeMenu} />
+                ) : ''}
 
         </div>
     )

@@ -170,7 +170,7 @@ export default function Itemsnavbar(props: ItemsnavbarProps){
                     <ButtonMenu page="importacao" text={props.texto}/> 
                 </div>
                 <div className="mr-2 w-28">
-                    <ButtonMenu page="configuracao" text='Configurações'/> 
+                    <ButtonMenu page="configuracao" text='Configurações'/>
                 </div>
                 
                 </div>

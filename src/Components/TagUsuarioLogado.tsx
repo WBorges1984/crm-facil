@@ -8,7 +8,7 @@ interface TagUsuarioLogadoProps{
 
 export default function TagUsuarioLogado(props: TagUsuarioLogadoProps){
     return(
-        <div onClick={()=> console.log('oi biba')} className={`flex items-center pb-4 cursor-pointer select-none`}>
+        <div onClick={()=> console.log(';;;...;;;')} className={`flex items-center pb-4 cursor-pointer select-none`}>
             <div className="items-center justify-center pr-5 bg-gray-400 rounded-full h-12 w-12">
                 <h1 className="text-white text-2xl text-center pl-1 pr-1 pt-2">{props.iniciais}</h1>
             </div>
