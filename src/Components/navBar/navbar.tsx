@@ -1,6 +1,6 @@
 interface NavBarProps{
     TypeMenu: 'Dashboard' | 'Tarefas' | 'Contatos' | 'Empresas' |'Configurações' 
-    | 'Relatórios' |'Importações'
+    | 'Relatórios' |'Notes'
     
 }
 
@@ -8,7 +8,7 @@ import Itemsnavbar from "./itemsNavbar";
 
 export default function Navbar(props: NavBarProps){
     return(
-        <div className="flex justify-end0">
+        <div className="flex justify-end">
 
             {props.TypeMenu === 'Dashboard' ? (
                 <Itemsnavbar Dashboard texto={props.TypeMenu} />
@@ -28,8 +28,8 @@ export default function Navbar(props: NavBarProps){
             {props.TypeMenu === 'Relatórios' ? (
                 <Itemsnavbar Relatórios texto={props.TypeMenu} />
                 ) : ''}
-            {props.TypeMenu === 'Importações' ? (
-                <Itemsnavbar Importações texto={props.TypeMenu} />
+            {props.TypeMenu === 'Notes' ? (
+                <Itemsnavbar Notes texto={props.TypeMenu} />
                 ) : ''}
             {props.TypeMenu === 'Configurações' ? (
                     <Itemsnavbar Configurações texto={props.TypeMenu} />

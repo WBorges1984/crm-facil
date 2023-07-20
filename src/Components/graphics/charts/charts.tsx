@@ -10,7 +10,7 @@ interface ChartsProps{
 
 export const Charts  =(
     
-        <div>
+        <div className="">
             <Chart
             width={'500px'}
             height={'300px'}
