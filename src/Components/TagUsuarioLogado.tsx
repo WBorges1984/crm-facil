@@ -15,10 +15,10 @@ export default function TagUsuarioLogado(props: TagUsuarioLogadoProps){
 
             <div className="pl-4">
                 <h1 className={`font-bold
-                    text-white 
+                    text-black 
                 `}>{props.usuario}</h1>
                 <h1 className={`font-semibold text-xs
-                    text-white 
+                    text-black 
                 `}>{props.empresa}</h1>
             </div>
             <div className={` pl-3

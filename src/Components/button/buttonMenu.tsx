@@ -9,7 +9,7 @@ interface ButtonMenuProps{
 export default function ButtonMenu(props: ButtonMenuProps){
     return(
         <div className={`
-            text-center text-gray-100 hover:-translate-y-0.5 
+            text-center text-gray-800 hover:-translate-y-0.5 
             transition motion-reduce:hover:translate-y-0 motion-reduce:transition-none
         `}>
          <Link href={`${props.page}`}> 

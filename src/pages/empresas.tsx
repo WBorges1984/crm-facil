@@ -9,21 +9,23 @@ export default function Empresas(){
 
  const [pag, setPag ] = useState(3);   
     return(<>
-        <div className='flex justify-between bg-gradient-to-t from-teal-700 to-slate-700 h-14 pt-4 select-none'>
+        <div className='flex justify-between
+        shadow-black
+        bg-gradient-to-t bg-white h-14 pt-4 select-none'>
         <header>
             <title>CRM-FACIL</title>
         </header>
         <TagUsuarioLogado iniciais='WB' usuario='WILLIAN BORGES' empresa='GERBOR SOLUÇÕES'/>
         <section id='#menu'> <Navbar TypeMenu='Empresas'/></section>
         </div>
-        <div className={`bg-gradient-to-t from-teal-700 to-slate-700
+        <div className={`bg-gradient-to-t from-white to-gray-100
             text-slate-800 h-screen p-7 
         `}>
             <div className={` flex justify-between
                    
              `}> 
                 <Button text="Adicionar Empresa" textColor="white" 
-                        bgColor="green" wButton="1/6" >
+                        bgColor="gray" wButton="1/6" >
                        {IconAdd}
                        </Button> 
                 <Input />
@@ -31,8 +33,8 @@ export default function Empresas(){
     
         <section id="TabelaClientes" className={`mt-10 `}>
             <table className="w-full ">
-                <thead className={`text-gray-200 text-left bg-gradient-to-t from-teal-700 to-teal-400
-                    
+                <thead className={`text-black text-left bg-gradient-to-t from-gray-600 to-white
+                    h-12
                     `}>
                     
                     <tr  className={``}>
@@ -44,7 +46,7 @@ export default function Empresas(){
                     <th scope="col">Ações</th>
                     </tr>
                 </thead>
-        <tbody className="text-white">
+        <tbody className='text-black'>
             <tr>
             <td className="pl-2"><input type="checkbox" name="empresa1" id="" /></td>
                 <th scope="row" className="text-left">1</th>
@@ -78,7 +80,7 @@ export default function Empresas(){
         <div className="flex justify-between mt-5 pl-2">
             
             <div className="flex">
-                <h4 className="text-teal-100">Exibindo</h4>
+                <h4 className="text-black">Exibindo</h4>
             <select className="mr-2 ml-2">
                 <option value="10" selected>10</option>
                 <option value="20">20</option>
@@ -86,10 +88,10 @@ export default function Empresas(){
                 <option value="40">40</option>
                 <option value="50">50</option>
             </select>
-                <h4 className="text-teal-100">de 3 Empresas</h4>
+                <h4 className="text-black">de 3 Empresas</h4>
             </div>
 
-            <div className="flex text-teal-100">
+            <div className="flex text-black">
                 <h4 className="mr-3">{`<`} Anterior</h4>
                 {pag}
                 <h4 className="ml-3">Próxima {`>`} </h4>
