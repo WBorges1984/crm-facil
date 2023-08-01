@@ -3,14 +3,36 @@ import Input from "@/Components/Input/input";
 import TagUsuarioLogado from "@/Components/TagUsuarioLogado";
 import Button from "@/Components/button/button";
 import Navbar from "@/Components/navBar/navbar";
-import { useState } from "react";
+import { data } from "autoprefixer";
+import { useState, useEffect } from "react";
 
 export default function Empresas(){
 
- const [pag, setPag ] = useState(3);   
+ const [pag, setPag ] = useState(3); 
+ const [users, setUsers] = useState([]);
+
+ useEffect(() => {
+    async function fetchUsers() {
+      try {
+        const response = await fetch('http://localhost:3000/api/empresas'); // Substitua pela URL da sua API
+        if (!response.ok) {
+          throw new Error('Erro ao buscar usuários');
+        }
+        const data = await response.json();
+        setUsers(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchUsers();
+  }, []);
+
+ 
+ 
     return(<>
         <div className='flex justify-between
-        shadow-black
+        
         bg-gradient-to-t bg-white h-14 pt-4 select-none'>
         <header>
             <title>CRM-FACIL</title>
@@ -19,7 +41,7 @@ export default function Empresas(){
         <section id='#menu'> <Navbar TypeMenu='Empresas'/></section>
         </div>
         <div className={`bg-gradient-to-t from-white to-gray-100
-            text-slate-800 h-screen p-7 
+            text-slate-800 h-full p-7 
         `}>
             <div className={` flex justify-between
                    
@@ -32,46 +54,35 @@ export default function Empresas(){
             </div>
     
         <section id="TabelaClientes" className={`mt-10 `}>
-            <table className="w-full ">
-                <thead className={`text-black text-left bg-gradient-to-t from-gray-600 to-white
+
+                <table className="w-full">
+                <thead className={`text-black text-left
                     h-12
                     `}>
                     
-                    <tr  className={``}>
+                    <tr  className={` border-b border-gray-500 shadow-black`}>                        
                     <td className="pl-2"><input type="checkbox" name="empresa1" id="" /></td>
-                    <th scope="col" className="pl-2">Cód</th>
-                    <th scope="col">Razão Social</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Negócios</th>
-                    <th scope="col">Ações</th>
+                    <th scope="col" className=" ">Empresas</th>
+                    <th scope="col">Responsável</th>
+                    <th scope="col">Segmento</th>
+                    <th scope="col">Negóciações</th>
+                    <th scope="col">Último Contato</th>
                     </tr>
                 </thead>
-        <tbody className='text-black'>
-            <tr>
-            <td className="pl-2"><input type="checkbox" name="empresa1" id="" /></td>
-                <th scope="row" className="text-left">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>3</td>
-                <td className="flex ">{IconEdit} {IconInfo} {IconCheck}</td>
-            </tr>
-            <tr>
-            <td className="pl-2"><input type="checkbox" name="empresa1" id="" /></td>
-                <th scope="row"className="text-left">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>4</td>
-                <td className="flex ">{IconEdit} {IconInfo} {IconCheck}</td>
-            </tr>
-            <tr>
-            <td className="pl-2"><input type="checkbox" name="empresa1" id="" /></td>
-                <th scope="row"className="text-left">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>2</td>
-                <td className="flex " >{IconEdit} {IconInfo} {IconCheck}</td>
-            </tr>
-        </tbody>
+                <tbody>
+        {users.map((item) => (
+          <tr key={item.id} className={`h-14 ${item.id % 2 == 0 ?'bg-slate-300' : 'bg-slate-200'}
+          
+          `}>
+            <td className="pl-2 border-b border-gray-500"><input type="checkbox" name="empresa1" id="" /></td>
+            <td className="border-b border-gray-500 h-10">{item.name}</td>
+            <td className="border-b border-gray-500">{item.responsavel}</td>
+            <td className="border-b border-gray-500">{item.segmento}</td>
+            <td className="border-b border-gray-500">{item.negociacoes}</td>
+            <td className="border-b border-gray-500">{item.ultContato}</td>
+          </tr>
+        ))}
+      </tbody>
                 </table>
 
         </section>
